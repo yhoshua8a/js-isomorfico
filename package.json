@@ -5,7 +5,8 @@
   "main": "package.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "serve": "nodemon --watch src -e pug,scss,js,json --exec npx babel-node server.js"
   },
   "author": "yhoshua ochoa",
   "license": "MIT",
@@ -14,6 +15,11 @@
     "babel-preset-env": "^1.7.0"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "ack-reload": "^2.0.12",
+    "express": "^4.16.4",
+    "node-sass-middleware": "^0.11.0",
+    "nodemon": "^1.18.6",
+    "pug": "^2.0.3",
+    "serve-favicon": "^2.5.0"
   }
 }
