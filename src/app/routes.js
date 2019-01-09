@@ -15,3 +15,5 @@ routes.get('/about', (req, res, next)=>{
        description:'template about'
    });
 });
+
+export default routes;

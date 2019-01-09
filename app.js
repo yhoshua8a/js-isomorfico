@@ -1,11 +1,14 @@
 import express from 'express';
 import pug from 'pug';
 import favicon from 'serve-favicon';
-import sassMiddelware from 'node-sass-middleware';
-import routes from './src/app/route';
+import sassMiddleware from 'node-sass-middleware';
+import routes from './src/app/routes';
+
+
+console.log("COMPILADO2....")
 
 const env = 'development';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8081;
 const publicDir = `${__dirname}/piblic`;
 const viewDir = `${__dirname}/src/views`;
 const faviconDir = `${__dirname}/public/img/favicon.png`;
@@ -18,12 +21,12 @@ app
    .set('port', port)
    .set('env', env)
 
-   .use(sassMiddelware({
+   .use(sassMiddleware({
        src:`${__dirname}/src/scss`,
        dest: publicDir,
        debug:false,
        outputStyle:'compressed'
-   }))
+    }))
    .use(express.static(publicDir))
    .use(favicon(faviconDir))
    .use(routes)
@@ -45,5 +48,3 @@ app
    export default app;
 
 //const express = require('express')
-
-console.log("COMPILADO")
