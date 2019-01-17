@@ -8,7 +8,7 @@ import routes from './src/app/routes';
 console.log("COMPILADO2....")
 
 const env = 'development';
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 8003;
 const publicDir = `${__dirname}/piblic`;
 const viewDir = `${__dirname}/src/views`;
 const faviconDir = `${__dirname}/public/img/favicon.png`;

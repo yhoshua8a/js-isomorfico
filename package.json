@@ -5,22 +5,29 @@
   "main": "package.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "serve": "nodemon --watch src -e pug,scss,js,json --exec npx babel-node server.js"
+    "serve": "nodemon --watch src -e pug,scss,js,json --exec npx babel-node server.js",
+    "browserify": "browserify ./src/js/index.js -d -o ./public/script.js -t [ babelify --presets[ env ] ]",
+    "watchify": "watchify ./src/js/index.js -d -o ./public/script.js -t [ babelify --presets [ env ] ] -v",
+    "start": "npm run watchify | npm run serve"
   },
   "author": "yhoshua ochoa",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0"
   },
   "dependencies": {
     "ack-reload": "^2.0.12",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
     "express": "^4.16.4",
     "node-sass-middleware": "^0.11.0",
     "nodemon": "^1.18.6",
     "npm": "^6.5.0",
     "pug": "^2.0.3",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "watchify": "^3.11.0"
   }
 }
