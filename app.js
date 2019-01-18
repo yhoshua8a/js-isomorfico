@@ -5,11 +5,9 @@ import sassMiddleware from 'node-sass-middleware';
 import routes from './src/app/routes';
 
 
-console.log("COMPILADO2....")
-
-const env = 'development';
-const port = process.env.PORT || 8003;
-const publicDir = `${__dirname}/piblic`;
+const env = 'developmentp';
+const port = process.env.PORT || 3002;
+const publicDir = `${__dirname}/public`;
 const viewDir = `${__dirname}/src/views`;
 const faviconDir = `${__dirname}/public/img/favicon.png`;
 
