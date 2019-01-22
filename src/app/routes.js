@@ -4,16 +4,11 @@ const routes = express.Router();
 
 routes.get('/', (req, res, next)=>{
     res.render('index', {
-        title:'Home',
-        description:'template home'
+        title:'To do list',
+        description:'to do list isomorfico'
     });
  });
 
-routes.get('/about', (req, res, next)=>{
-   res.render('index', {
-       title:'about',
-       description:'template about'
-   });
-});
+
 
 export default routes;
